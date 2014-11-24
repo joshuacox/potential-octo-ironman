@@ -1,11 +1,12 @@
 #!/bin/bash
 # move in to oltorf
+export BRANCH=astaroth
 hostname octo.webhosting.coop
 echo octo.webhosting.coop >/etc/hostname
 cd /tmp
-wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/master/interfaces
+wget https://rawgithubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/interfaces
 mv interfaces /etc/network/
-wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/master/sshd_config
+wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/sshd_config
 mv sshd_config /etc/ssh/
 https://raw.githubusercontent.com/joshuacox/octohost/master/bin/octo
 mv octo /usr/bin/
