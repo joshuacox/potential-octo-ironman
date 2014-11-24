@@ -1,6 +1,6 @@
 #!/bin/bash
 # move in to oltorf
-export BRANCH=astaroth
+export BRANCH=ichabod
 hostname octo.webhosting.coop
 echo octo.webhosting.coop >/etc/hostname
 cd /tmp
