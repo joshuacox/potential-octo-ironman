@@ -1,0 +1,30 @@
+coreos:
+    etcd:
+        name: athena1
+        discovery: https://discovery.etcd.io/<token>
+        addr: $public_ipv4;4001
+        peer-addr: $private_ipv4:7001
+    fleet:
+        public-ip: $public_ipv4
+        metadata:   region=us-west
+    flannel:
+        etcd-prefix:    /coreos.com/network2
+    locksmith:
+        endpoint:   webhosting.coop:4001
+    update:
+        reboot-strategy: etcd-lock
+    units:
+        - name: etcd.service
+        command: start
+        - name: fleet1.service
+        command: start
+    ssh_authorized_keys:
+        - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCulspcAMn+bd4H7xU4ea7OQP6mImYM3ilTQXiKVNPRbKBWwN2U6hdVAEQk0nLrUQlSUtrGGHJLAAOEZ0jHBdBB0v7WFtcsyWZQMpolSQUq5BK8viofR1Z0RRaqSwDqFFZyjS65xuAakbrtWSPeFFFJOYak3oYoHIkpp01TxMqF3wMZd7sxQ1m5sISpTkCRg/E9zt4s5gciB1b1mCy/nVA40lLrRbVKGOPMZPPXstx5AF/xNoD9mfdKWTqloSBB9KxiQBvBUBpHgyJNQBLFdUqZEEati+6brHx3DkL5LNmXB6xfCECWbO5Ys5DuNcwuf9XTVHpV52qNDd6GF3xbY17n bob@MSIGS70stealth
+    hostname: athena
+    users:
+        - name: thoth
+        groups:
+            - sudo
+            - docker
+        coreos-ssh-import-github: joshuacox
+    manage_etc_hosts: localhost
