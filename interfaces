@@ -4,20 +4,21 @@ iface lo inet loopback
 
 # The primary network interface
 auto eth0
-iface eth0 inet static 
+iface eth0 inet static
+        address 4.30.111.155
+        netmask 255.255.255.0
+        network 4.30.111.0
+        broadcast 4.30.111.255
+        gateway 4.30.111.129
+        # dns-* options are implemented by the resolvconf package, if installed
+        dns-nameservers 8.8.8.8
+        dns-search webhosting.coop
+
+auto eth1
+iface eth1 inet static 
         address 192.168.122.155
         netmask 255.255.255.0
         gateway 192.168.122.1 
         broadcast 192.168.122.255
         network 192.168.122.0 
-auto eth1
-iface eth1 inet static
-        address 4.30.111.155
-        netmask 255.255.255.0
-        network 4.30.111.0
-        broadcast 4.30.111.255
-        gateway 4.30.111.1
-        # dns-* options are implemented by the resolvconf package, if installed
-        dns-nameservers 8.8.8.8
-        dns-search webhosting.coop
 pre-up sleep 2
