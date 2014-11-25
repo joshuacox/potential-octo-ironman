@@ -4,11 +4,11 @@ export BRANCH=octo
 hostname octo.webhosting.coop
 echo octo.webhosting.coop >/etc/hostname
 cd /tmp
-wget https://rawgithubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/interfaces
+wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/interfaces
 mv interfaces /etc/network/
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/sshd_config
 #mv sshd_config /etc/ssh/
-https://raw.githubusercontent.com/joshuacox/octohost/master/bin/octo
+wget https://raw.githubusercontent.com/joshuacox/octohost/master/bin/octo
 echo -e  'y\n'|ssh-keygen -q -t rsa -N "" -f ~/.ssh/id_rsa
 curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/addus.sh | bash
 mv octo /usr/bin/
