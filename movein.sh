@@ -17,5 +17,5 @@ wget https://raw.githubusercontent.com/joshuacox/octohost/master/bin/octo > /dev
 echo -e  'y\n'|ssh-keygen -q -t rsa -N "" -f ~/.ssh/id_rsa > /dev/null 2>&1
 curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/octoaddus.sh | bash > /dev/null 2>&1
 mv octo /usr/bin/
-ufw accept 16222 > /dev/null 2>&1
+ufw allow 16222 > /dev/null 2>&1
 ufw deny ssh > /dev/null 2>&1
