@@ -7,6 +7,8 @@ echo 'domain webhosting.coop'>/etc/resolv.conf
 echo 'search webhosting.coop'>>/etc/resolv.conf
 echo 'nameserver 8.8.8.8' >>/etc/resolv.conf
 echo 'nameserver 8.8.4.4' >>/etc/resolv.conf
+echo '#Octo'>>/etc/hosts
+echo '65.67.51.188 octo.webhosting.coop'>>/etc/hosts
 cp /etc/resolv.conf /etc/resolvconf/resolv.conf.d/base
 cd /tmp
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/interfaces > /dev/null 2>&1
