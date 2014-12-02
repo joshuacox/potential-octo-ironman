@@ -1,15 +1,18 @@
 #!/bin/bash
 # move in to oltorf
+#apt-get update
+apt-get install -y qemu-kvm libvirt-bin bridge-utils dnsmasq
+update-rc.d dnsmasq disable
 export BRANCH=zaphod
 export DOMAIN=thalhalla.net
 hostname $BRANCH.$DOMAIN
-echo octo.webhosting.coop >/etc/hostname
-echo 'domain webhosting.coop'>/etc/resolv.conf
-echo 'search webhosting.coop'>>/etc/resolv.conf
+echo $BRANCH.$DOMAIN >/etc/hostname
+echo "domain $DOMAIN">/etc/resolv.conf
+echo "search $DOMAIN">>/etc/resolv.conf
 echo 'nameserver 8.8.8.8' >>/etc/resolv.conf
 echo 'nameserver 8.8.4.4' >>/etc/resolv.conf
-echo '#Octo'>>/etc/hosts
-echo '65.67.51.188 octo.webhosting.coop'>>/etc/hosts
+echo "#$BRANCH">>/etc/hosts
+echo "10.0.23.88 $BRANCH.$HOSTNAME">>/etc/hosts
 cp /etc/resolv.conf /etc/resolvconf/resolv.conf.d/base
 cd /tmp
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/interfaces > /dev/null 2>&1

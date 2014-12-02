@@ -7,10 +7,17 @@ iface lo inet loopback
 
 # The primary network interface
 allow-hotplug eth0
-iface eth0 inet static
+iface eth0 inet manual 
+
+auto br0
+iface br0 inet static
 	address 10.0.23.88
 	netmask 255.255.255.0
 	gateway 10.0.23.1
 	network 10.0.23.0
 	broadcast 10.0.23.255
 	dns-nameservers 151.164.11.201 151.164.20.201 8.8.8.8 8.8.4.4
+  bridge_ports eth0
+  bridge_hello 2
+  bridge_maxage 12
+  bridge_stp off
