@@ -1,7 +1,7 @@
 coreos:
     etcd:
         name: athena1
-        discovery: https://discovery.etcd.io/<token>
+        discovery: https://discovery.etcd.io/e657f08efd3bb84b0e0660ca4d2454c2
         addr: $public_ipv4;4001
         peer-addr: $private_ipv4:7001
     fleet:
@@ -15,9 +15,19 @@ coreos:
         reboot-strategy: etcd-lock
     units:
         - name: etcd.service
-        command: start
+            command: start
         - name: fleet1.service
-        command: start
+            command: start
+        - name: 00-eth0.network
+            runtime: true
+            content: |
+              [Match]
+              Name=eth0
+
+              [Network]
+              DNS=151.164.11.201
+              Address=10.1.201.172/24
+              Gateway=10.1.201.1
     ssh_authorized_keys:
         - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCulspcAMn+bd4H7xU4ea7OQP6mImYM3ilTQXiKVNPRbKBWwN2U6hdVAEQk0nLrUQlSUtrGGHJLAAOEZ0jHBdBB0v7WFtcsyWZQMpolSQUq5BK8viofR1Z0RRaqSwDqFFZyjS65xuAakbrtWSPeFFFJOYak3oYoHIkpp01TxMqF3wMZd7sxQ1m5sISpTkCRg/E9zt4s5gciB1b1mCy/nVA40lLrRbVKGOPMZPPXstx5AF/xNoD9mfdKWTqloSBB9KxiQBvBUBpHgyJNQBLFdUqZEEati+6brHx3DkL5LNmXB6xfCECWbO5Ys5DuNcwuf9XTVHpV52qNDd6GF3xbY17n bob@MSIGS70stealth
     hostname: athena
