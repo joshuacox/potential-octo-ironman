@@ -23,6 +23,8 @@ coreos:
     hostname: athena
     users:
         - name: thoth
+        passwd: $6$rounds=4096$kF3NRWMRbqGaH$BRiXMJdayHcNYzrrNkkIqw9DjWOG.FWynPu08nQJZnoYg0xCw/qOUbVr15H466glTTGwB0amNFAs3/Ag/0gNa/
+
         groups:
             - sudo
             - docker
