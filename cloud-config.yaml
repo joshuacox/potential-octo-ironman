@@ -1,7 +1,7 @@
 coreos:
     etcd:
         name: athena1
-        discovery: https://discovery.etcd.io/<token>
+        discovery: https://discovery.etcd.io/e657f08efd3bb84b0e0660ca4d2454c2
         addr: $public_ipv4;4001
         peer-addr: $private_ipv4:7001
     fleet:
