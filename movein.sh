@@ -43,4 +43,6 @@ add_line_to_FSTAB()
 
 check_if_line_exists || add_line_to_FSTAB
 
+apt-get update
+apt-get -y install byobu
 echo 'You should reboot Astaroth now'
