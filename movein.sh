@@ -45,4 +45,5 @@ check_if_line_exists || add_line_to_FSTAB
 
 apt-get update
 apt-get -y install byobu
+mkdir /etc/consul.d
 echo 'You should reboot Astaroth now'
