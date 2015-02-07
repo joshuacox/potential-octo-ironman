@@ -25,8 +25,8 @@ ln -s /usr/bin/gitreceive ./
 ufw allow 16222 > /dev/null 2>&1
 ufw deny ssh > /dev/null 2>&1
 
-mkdir /exports
-LINE_TO_ADD="65.67.51.187:/mktulu/exports /exports nfs rw,vers=4,addr=65.67.51.187,clientaddr=65.67.51.188 0 0"
+mkdir -p /mktulu/exports
+LINE_TO_ADD="65.67.51.187:/mktulu/exports /mktulu/exports nfs rw,vers=4,addr=65.67.51.187,clientaddr=65.67.51.188 0 0"
 
 check_if_line_exists()
 {
@@ -42,6 +42,10 @@ add_line_to_FSTAB()
 }
 
 check_if_line_exists || add_line_to_FSTAB
+mount /mktulu/exports
+cd /
+tar zxvf /mktulu/exports/export-astaroth.tar.gz
+chown -R docker. exports
 
 apt-get update
 apt-get -y install byobu
