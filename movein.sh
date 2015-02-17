@@ -1,5 +1,6 @@
 #!/bin/bash
 # move in to oltorf
+<<<<<<< HEAD
 export BRANCH=astaroth
 hostname octo.webhosting.coop
 echo octo.webhosting.coop >/etc/hostname
@@ -51,3 +52,12 @@ apt-get update
 apt-get -y install byobu
 mkdir /etc/consul.d
 echo 'You should reboot Astaroth now'
+=======
+#hostname octo.webhosting.coop
+#echo octo.webhosting.coop >/etc/hostname
+cd /tmp
+wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/saruman/ifcfg-eth0
+mv ifcfg-eth0 /etc/sysconfig/network-scripts/
+wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/saruman/sshd_config
+mv sshd_config /etc/ssh/
+>>>>>>> c9f80f132ccd3c4c88e81ce92a6f5be97053d85b
