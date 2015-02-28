@@ -1,10 +1,10 @@
 #!/bin/bash
 # move in to oltorf
 export BRANCH=astaroth
-apt-get update
+# apt-get update
 apt-get -y install byobu
 hostname octo.webhosting.coop
-rm -Rf /home/vagrant/.ssh
+rm -Rf /home/vagrant/.ssh > /dev/null 2>&1
 echo octo.webhosting.coop >/etc/hostname
 echo 'domain webhosting.coop'>/etc/resolv.conf
 echo 'search webhosting.coop'>>/etc/resolv.conf
