@@ -13,6 +13,8 @@ echo 'nameserver 8.8.4.4' >>/etc/resolv.conf
 echo '#Octo'>>/etc/hosts
 echo '65.67.51.188 octo.webhosting.coop'>>/etc/hosts
 cp /etc/resolv.conf /etc/resolvconf/resolv.conf.d/base
+mkdir -p /etc/nginx/private
+mkdir -p /etc/nginx/certs
 cd /tmp
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/generateSelfSignedCert > /dev/null 2>&1
 mv generateSelfSignedCert /usr/local/bin/

@@ -61,6 +61,9 @@ openssl rsa -in privkey.pem -out ${key}
 # Create the Certificate
 openssl x509 -in ${csr} -out ${cert} -req -signkey ${key} -days 1000
 
+
+mkdir -p /etc/nginx/private
+mkdir -p /etc/nginx/certs
 mv ${csr} /etc/nginx/certs/
 mv ${cert} /etc/nginx/certs/
 mv ${key} /etc/nginx/private/
