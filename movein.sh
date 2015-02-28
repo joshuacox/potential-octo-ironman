@@ -1,6 +1,8 @@
 #!/bin/bash
 # move in to oltorf
 export BRANCH=astaroth
+apt-get update
+apt-get -y install byobu
 hostname octo.webhosting.coop
 echo octo.webhosting.coop >/etc/hostname
 echo 'domain webhosting.coop'>/etc/resolv.conf
@@ -11,6 +13,13 @@ echo '#Octo'>>/etc/hosts
 echo '65.67.51.188 octo.webhosting.coop'>>/etc/hosts
 cp /etc/resolv.conf /etc/resolvconf/resolv.conf.d/base
 cd /tmp
+wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/octoconfigRestore > /dev/null 2>&1
+mv octoconfigRestore /usr/local/bin/
+chmod +x /usr/local/bin/octoconfigRestore
+wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/refreshCerts > /dev/null 2>&1
+mv refreshCerts /usr/local/bin/
+chmod +x /usr/local/bin/refreshCerts
+/usr/local/bin/refreshCerts
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/interfaces > /dev/null 2>&1
 mv interfaces /etc/network/
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/sshd_config > /dev/null 2>&1
@@ -43,11 +52,11 @@ add_line_to_FSTAB()
 
 check_if_line_exists || add_line_to_FSTAB
 mount /mktulu/exports
-cd /
-tar zxvf /mktulu/exports/export-astaroth.tar.gz
-chown -R docker. exports
+echo '#!/bin/bash'>/root/untarexports.sh
+echo 'cd /'>>/root/untarexports.sh
+echo 'tar zxvf /mktulu/exports/export-astaroth.tar.gz'>>/root/untarexports.sh
+echo 'chown -R docker. exports'>>/root/untarexports.sh
+chmod +x /root/untarexports.sh
 
-apt-get update
-apt-get -y install byobu
 mkdir /etc/consul.d
-echo 'You should reboot Astaroth now'
+echo 'You should first untar exports and then reboot Astaroth now (hint look at /root/untarexports.sh)'
