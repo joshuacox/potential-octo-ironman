@@ -17,6 +17,8 @@ cp /etc/resolv.conf /etc/resolvconf/resolv.conf.d/base
 mkdir -p /etc/nginx/private
 mkdir -p /etc/nginx/certs
 cd /tmp
+wget https://raw.githubusercontent.com/joshuacox/octohost-cookbook/templateSSL.ctmpl/files/default/templateSSL.ctmpl
+mv templateSSL.ctmpl /etc/nginx/
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/generateSelfSignedCert > /dev/null 2>&1
 mv generateSelfSignedCert /usr/local/bin/
 chmod +x /usr/local/bin/generateSelfSignedCert
