@@ -4,7 +4,8 @@ export BRANCH=astaroth
 # apt-get update
 apt-get -y install byobu
 hostname octo.webhosting.coop
-rm -Rf /home/vagrant/.ssh > /dev/null 2>&1
+# rm -Rf /home/vagrant/.ssh > /dev/null 2>&1
+deluser --remove-home --quiet vagrant
 echo octo.webhosting.coop >/etc/hostname
 echo 'domain webhosting.coop'>/etc/resolv.conf
 echo 'search webhosting.coop'>>/etc/resolv.conf
