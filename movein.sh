@@ -22,6 +22,10 @@ chmod +x /usr/local/bin/generateSelfSignedCert
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/octoconfigRestore > /dev/null 2>&1
 mv octoconfigRestore /usr/local/bin/
 chmod +x /usr/local/bin/octoconfigRestore
+wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/consulReset > /dev/null 2>&1
+mv consulReset /usr/local/bin/
+chmod +x /usr/local/bin/consulReset
+/usr/local/bin/consulReset
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/refreshCerts > /dev/null 2>&1
 mv refreshCerts /usr/local/bin/
 chmod +x /usr/local/bin/refreshCerts
@@ -60,7 +64,7 @@ check_if_line_exists || add_line_to_FSTAB
 mount /mktulu/exports
 echo '#!/bin/bash'>/root/untarexports.sh
 echo 'cd /'>>/root/untarexports.sh
-echo 'tar zxvf /mktulu/exports/export-astaroth.tar.gz'>>/root/untarexports.sh
+echo 'tar zxvf /mktulu/exports/exports-astaroth.tar.gz'>>/root/untarexports.sh
 echo 'chown -R docker. exports'>>/root/untarexports.sh
 chmod +x /root/untarexports.sh
 
