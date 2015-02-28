@@ -14,6 +14,9 @@ echo '#Octo'>>/etc/hosts
 echo '65.67.51.188 octo.webhosting.coop'>>/etc/hosts
 cp /etc/resolv.conf /etc/resolvconf/resolv.conf.d/base
 cd /tmp
+wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/generateSelfSignedCert > /dev/null 2>&1
+mv generateSelfSignedCert /usr/local/bin/
+chmod +x /usr/local/bin/generateSelfSignedCert
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/octoconfigRestore > /dev/null 2>&1
 mv octoconfigRestore /usr/local/bin/
 chmod +x /usr/local/bin/octoconfigRestore
