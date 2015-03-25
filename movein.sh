@@ -44,6 +44,7 @@ curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/octoaddus.
 # chmod +x /usr/bin/octo
 cd /usr/local/bin/
 ln -s /usr/bin/gitreceive ./
+ufw allow 5665 > /dev/null 2>&1
 ufw allow 16222 > /dev/null 2>&1
 ufw deny ssh > /dev/null 2>&1
 
