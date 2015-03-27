@@ -45,6 +45,8 @@ curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/octoaddus.
 cd /usr/local/bin/
 ln -s /usr/bin/gitreceive ./
 ufw allow 9997 > /dev/null 2>&1
+ufw allow 9998 > /dev/null 2>&1
+ufw allow 9999 > /dev/null 2>&1
 ufw allow 9200 > /dev/null 2>&1
 ufw allow 9292 > /dev/null 2>&1
 ufw allow 9300 > /dev/null 2>&1
