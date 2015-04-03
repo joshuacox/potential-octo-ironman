@@ -11,6 +11,14 @@ octo config:set whcredmine1/SSL_KEY '/etc/nginx/private/meirowitz.webhosting.coo
 octo config:set townhallnginx/SSL_FORCED 'true'
 octo config:set townhallnginx/SSL_CERTIFICATE '/etc/nginx/certs/townhall.webhosting.coop.crt'
 octo config:set townhallnginx/SSL_KEY '/etc/nginx/private/townhall.webhosting.coop.key'
+/usr/local/bin/generateSelfSignedCert octohost webhosting.coop
+octo config:set whc-icinga2/SSL_FORCED 'true'
+octo config:set whc-icinga2/SSL_CERTIFICATE '/etc/nginx/certs/octohost.webhosting.coop.crt'
+octo config:set whc-icinga2/SSL_KEY '/etc/nginx/private/octohost.webhosting.coop.key'
+/usr/local/bin/generateSelfSignedCert kibana webhosting.coop
+octo config:set kibanocto/SSL_FORCED 'true'
+octo config:set kibanocto/SSL_CERTIFICATE '/etc/nginx/certs/kibana.webhosting.coop.crt'
+octo config:set kibanocto/SSL_KEY '/etc/nginx/private/kibana.webhosting.coop.key'
 /usr/local/bin/generateSelfSignedCert athena thalhalla.net
 octo config:set athena/SSL_FORCED 'true'
 octo config:set athena/SSL_CERTIFICATE '/etc/nginx/certs/athena.thalhalla.net.crt'
