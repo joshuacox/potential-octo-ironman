@@ -19,6 +19,10 @@ octo config:set whc-icinga2/SSL_KEY '/etc/nginx/private/octohost.webhosting.coop
 octo config:set kibanocto/SSL_FORCED 'true'
 octo config:set kibanocto/SSL_CERTIFICATE '/etc/nginx/certs/kibana.webhosting.coop.crt'
 octo config:set kibanocto/SSL_KEY '/etc/nginx/private/kibana.webhosting.coop.key'
+/usr/local/bin/generateSelfSignedCert kibana thalhalla.net
+octo config:set kibanocto/SSL_FORCED 'true'
+octo config:set kibanocto/SSL_CERTIFICATE '/etc/nginx/certs/kibana.thalhalla.net.crt'
+octo config:set kibanocto/SSL_KEY '/etc/nginx/private/kibana.thalhalla.net.key'
 /usr/local/bin/generateSelfSignedCert athena thalhalla.net
 octo config:set athena/SSL_FORCED 'true'
 octo config:set athena/SSL_CERTIFICATE '/etc/nginx/certs/athena.thalhalla.net.crt'
