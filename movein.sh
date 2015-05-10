@@ -7,6 +7,7 @@ apt-get update
 apt-get install -y git python-pip wget curl sudo encfs
 pip install debops ansible netaddr ldap
 cd /tmp
+curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/addus.sh | bash > /dev/null 2>&1
 wget https://rawgithubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/interfaces
 mv interfaces /etc/network/
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/sshd_config
