@@ -1,6 +1,6 @@
 potential-octo-ironman
 ======================
 
-Some simple things to setup octo on oltorf
+Some simple things to setup mktulu on oltorf
 
-curl https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/ichabod/movein.sh | bash
+curl https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/mktulu/movein.sh | bash
