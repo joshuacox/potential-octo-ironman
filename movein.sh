@@ -4,7 +4,8 @@ export BRANCH=mktulu
 hostname mktulu.thalhalla.net
 echo mktulu.thalhalla.net >/etc/hostname
 apt-get update
-apt-get install -y git python-pip wget curl sudo encfs uuid-runtime unzip bzip2 rsync vim fail2ban rake build-essential ruby-dev libgecode-dev qemu-kvm libvirt-bin
+apt-get install -y git python-pip wget curl sudo encfs uuid-runtime unzip bzip2 rsync vim fail2ban
+apt-get install -y rake build-essential ruby-dev libgecode-dev qemu-kvm libvirt-bin qemu-utils ebtables dnsmasq
 gem intall bundler
 pip install debops ansible netaddr ldap
 cd /tmp
