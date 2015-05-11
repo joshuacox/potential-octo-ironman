@@ -42,7 +42,9 @@ wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/
 mv sshd_config /etc/ssh/
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/export > /dev/null 2>&1
 mv export /root/export
-bash /root/export
+wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/consulReset > /dev/null 2>&1
+mv consulReset /root/consulReset
+bash /root/consulReset
 cd /root
 git clone git@github.com:joshuacox/freezing-cyril.git
 cd freezing-cyril
