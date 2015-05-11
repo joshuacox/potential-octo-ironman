@@ -4,7 +4,7 @@ export BRANCH=mktulu
 hostname mktulu.thalhalla.net
 echo mktulu.thalhalla.net >/etc/hostname
 apt-get update
-apt-get install -y git python-pip wget curl sudo encfs uuid-runtime unzip bzip2 rsync vim
+apt-get install -y git python-pip wget curl sudo encfs uuid-runtime unzip bzip2 rsync vim fail2ban
 pip install debops ansible netaddr ldap
 cd /tmp
 curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/addus.sh | bash > /dev/null 2>&1
