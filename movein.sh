@@ -3,7 +3,7 @@
 export BRANCH=zaphod
 export DOMAIN=thalhalla.net
 apt-get update
-apt-get install -y git python-pip wget curl sudo encfs uuid-runtime unzip bzip2 rsync vim fail2ban byobu vim
+apt-get install -y git python-pip wget curl sudo encfs uuid-runtime unzip bzip2 rsync vim fail2ban byobu vim ntp
 apt-get install -y rake build-essential ruby-dev libgecode-dev qemu qemu-kvm libvirt-bin qemu-utils ebtables dnsmasq bridge-utils dnsmasq virtinst
 update-rc.d dnsmasq disable
 hostname $BRANCH.$DOMAIN
