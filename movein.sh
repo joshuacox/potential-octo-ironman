@@ -21,13 +21,14 @@ cd /tmp
 # wget https://raw.githubusercontent.com/joshuacox/octohost-cookbook/templateSSL.ctmpl/files/default/templateSSL.ctmpl
 # mv templateSSL.ctmpl /etc/nginx/
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/octohost > /dev/null 2>&1
-mv octohost /etc/default/octohost/
+mv octohost /etc/default/octohost
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/generateSelfSignedCert > /dev/null 2>&1
 mv generateSelfSignedCert /usr/local/bin/
 chmod +x /usr/local/bin/generateSelfSignedCert
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/octoconfigRestore > /dev/null 2>&1
 mv octoconfigRestore /usr/local/bin/
 chmod +x /usr/local/bin/octoconfigRestore
+/usr/local/bin/octoconfigRestore
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/consulReset > /dev/null 2>&1
 mv consulReset /usr/local/bin/
 chmod +x /usr/local/bin/consulReset
