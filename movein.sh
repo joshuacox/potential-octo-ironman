@@ -69,7 +69,6 @@ ufw allow 16222 > /dev/null 2>&1
 ufw deny ssh > /dev/null 2>&1
 
 mkdir -p /mktulu/exports
-LINE_TO_ADD="65.67.51.187:/mktulu/exports /mktulu/exports nfs rw,vers=4,addr=65.67.51.187,clientaddr=65.67.51.188 0 0"
 
 check_if_line_exists()
 {
@@ -84,6 +83,9 @@ add_line_to_FSTAB()
     printf "%s\n" "$LINE_TO_ADD" >> "$FSTAB"
 }
 
+LINE_TO_ADD="65.67.51.187:/mktulu/exports /mktulu/exports nfs rw,vers=4,addr=65.67.51.187,clientaddr=65.67.51.188 0 0"
+check_if_line_exists || add_line_to_FSTAB
+LINE_TO_ADD='UUID=0be339b4-634e-4dee-b8e0-04030f238ad7 /exports      ext4 defaults 0 1'
 check_if_line_exists || add_line_to_FSTAB
 mount /mktulu/exports
 echo '#!/bin/bash'>/root/untarexports.sh
