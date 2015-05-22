@@ -47,7 +47,7 @@ wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/
 mv consulReset /root/consulReset
 bash /root/consulReset
 cd /root
-git clone git@github.com:joshuacox/freezing-cyril.git
+git clone https://github.com/joshuacox/freezing-cyril.git
 cd freezing-cyril
 chown +x LastDocker && cp LastDocker /usr/local/bin/
 chown +x EnterDocker && cp EnterDocker /usr/local/bin/
