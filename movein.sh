@@ -2,6 +2,8 @@
 # move in to oltorf
 export BRANCH=ipa2
 hostname ipa2.webhosting.coop
+apt-get update
+apt-get -y install byobu vim fail2ban curl
 echo ipa2.webhosting.coop >/etc/hostname
 echo 'domain webhosting.coop'>/etc/resolv.conf
 echo 'search webhosting.coop'>>/etc/resolv.conf
@@ -44,6 +46,4 @@ check_if_line_exists || add_line_to_FSTAB
 LINE_TO_ADD="/dev/vdc1 /exports btrfs rw 0 0"
 check_if_line_exists || add_line_to_FSTAB
 
-apt-get update
-apt-get -y install byobu vim fail2ban
 echo 'You should reboot ipa2.webhosting.coop now'
