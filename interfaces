@@ -6,24 +6,22 @@ auto lo
 iface lo inet loopback
 
 # The primary network interface
-allow-hotplug eth0
-auto eth0
-iface eth0 inet manual 
+allow-hotplug p4p1
+auto p4p1
+iface p4p1 inet manual
 
 auto br0
 iface br0 inet static
-	address 65.67.51.187
-	netmask 255.255.255.248
-	network 65.67.51.184
-	broadcast 65.67.51.191
-	gateway 65.67.51.190
-	# dns-* options are implemented by the resolvconf package, if installed
-	dns-nameservers 151.164.11.201 151.164.20.201 8.8.8.8
-	dns-search thalhalla.net
-        dns-search webhosting.coop
-        bridge_ports eth0
-        bridge_hello 2
-        bridge_maxage 12
-        bridge_stp off
-	pre-up sleep 3
-	up sleep 3
+    address 4.31.168.83
+    netmask 255.255.255.0
+    network 4.31.168.0
+    broadcast 4.31.168.255
+    gateway 4.31.168.1
+    dns-nameservers 8.8.8.8 8.8.4.4
+    dns-search thalhalla.com
+    bridge_ports p4p1
+    bridge_hello 2
+    bridge_maxage 12
+    bridge_stp off
+    pre-up sleep 3
+    up sleep 3
