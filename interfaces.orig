@@ -1,0 +1,34 @@
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto p4p1
+iface p4p1 inet static
+        address 4.31.168.83
+        netmask 255.255.255.0
+        network 4.31.168.0
+        broadcast 4.31.168.255
+        gateway 4.31.168.1
+        # dns-* options are implemented by the resolvconf package, if installed
+        dns-nameservers 8.8.8.8 8.8.4.4
+
+auto p4p1:0
+iface p4p1:0 inet static
+address 4.31.168.84
+
+auto p4p1:1
+iface p4p1:0 inet static
+address 4.31.168.85
+
+auto p4p1:2
+iface p4p1:0 inet static
+address 4.31.168.86
+
+auto p4p1:3
+iface p4p1:0 inet static
+address 4.31.168.87
+
