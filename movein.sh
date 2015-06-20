@@ -3,6 +3,7 @@
 BRANCH=ipa3
 IP_ADDR=65.67.51.185
 deluser --force --remove-home --remove-all-files vagrant
+rm -rf /home/vagrant
 hostname $BRANCH.webhosting.coop
 apt-get update
 apt-get -y install byobu vim fail2ban curl
@@ -42,10 +43,17 @@ add_line_to_FSTAB()
 LINE_TO_ADD="65.67.51.187:/mktulu/exports /exports nfs rw,vers=4,addr=65.67.51.187,clientaddr=$IP_ADDR 0 0"
 check_if_line_exists || add_line_to_FSTAB
 
-LINE_TO_ADD="/dev/vdb1 /var/lib/docker btrfs rw 0 0"
+LINE_TO_ADD="/dev/vdb1 /var/lib/docker ext4 rw 0 0"
 check_if_line_exists || add_line_to_FSTAB
 
-LINE_TO_ADD="/dev/vdc1 /exports btrfs rw 0 0"
+LINE_TO_ADD="/dev/vdc1 /exports ext4 rw 0 0"
 check_if_line_exists || add_line_to_FSTAB
+
+curl https://gist.githubusercontent.com/joshuacox/25f7228a33e96f78d2a5/raw/44f6a574b08a9f93047a1d642eb705363b3d7bcb/docker2overlay|bash
+sed -i 's/GRUB_TIMEOUT=.*/GRUB_TIMEOUT=1/' /etc/default/grub
+sed -i 's/GRUB_HIDDEN_TIMEOUT_QUIET=.*/GRUB_HIDDEN_TIMEOUT_QUIET=false/' /etc/default/grub
+sed -i 's/GRUB_HIDDEN_TIMEOUT=.*/GRUB_HIDDEN_TIMEOUT_QUIET=/' /etc/default/grub
+sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT=""/' /etc/default/grub
+update-grub2
 
 echo "You should reboot $BRANCH.webhosting.coop now"
