@@ -2,6 +2,7 @@
 # move in to oltorf
 BRANCH=ipa3
 IP_ADDR=65.67.51.185
+deluser --force --remove-home --remove-all-files vagrant
 hostname $BRANCH.webhosting.coop
 apt-get update
 apt-get -y install byobu vim fail2ban curl
