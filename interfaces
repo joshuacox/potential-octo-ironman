@@ -18,10 +18,12 @@ iface eth0 inet static
 
 allow-hotplug eth1
 iface eth1 inet static 
-	address 65.67.51.189
-	netmask 255.255.255.248
-	gateway 65.67.51.190
-	network 65.67.51.184
-	broadcast 65.67.51.191
-	dns-nameservers 151.164.11.201 151.164.20.201 8.8.8.8 8.8.4.4
+  address 4.30.111.153
+  netmask 255.255.255.0
+  network 4.30.111.0
+  broadcast 4.30.111.255
+  gateway 4.30.111.129
+  # dns-* options are implemented by the resolvconf package, if installed
+  dns-nameservers 8.8.8.8
+  dns-search webhosting.coop
 	pre-up sleep 2
