@@ -95,5 +95,5 @@ echo 'tar zxvf /mktulu/exports/exports-astaroth.tar.gz'>>/root/untarexports.sh
 echo 'chown -R docker. exports'>>/root/untarexports.sh
 chmod +x /root/untarexports.sh
 
-mkdir /etc/consul.d
+mkdir -p /etc/consul.d
 echo 'You should first untar exports and then reboot Astaroth now (hint look at /root/untarexports.sh)'
