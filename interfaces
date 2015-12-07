@@ -3,9 +3,9 @@ auto lo
 iface lo inet loopback
 
 # The primary network interface
-auto eth0
-iface eth0 inet static
-        address 4.30.111.155
+auto eth1
+iface eth1 inet static
+        address 4.30.111.156
         netmask 255.255.255.0
         network 4.30.111.0
         broadcast 4.30.111.255
@@ -14,9 +14,9 @@ iface eth0 inet static
         dns-nameservers 8.8.8.8
         dns-search webhosting.coop
 
-auto eth1
-iface eth1 inet static 
-        address 192.168.122.155
+auto eth0
+iface eth0 inet static 
+        address 192.168.122.156
         netmask 255.255.255.0
         gateway 192.168.122.1 
         broadcast 192.168.122.255
