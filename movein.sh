@@ -1,7 +1,7 @@
 #!/bin/bash
 # move in to behemoth
-deluser vagrant
-rm -Rf /home/vagrant
+#deluser vagrant
+#rm -Rf /home/vagrant
 export BRANCH=hawk
 hostname hawk.webhosting.coop
 echo hawk.webhosting.coop >/etc/hostname
