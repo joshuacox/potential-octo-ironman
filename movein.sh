@@ -8,7 +8,7 @@ mv sshd_config /etc/ssh/
 wget -O - http://debmon.org/debmon/repo.key 2>/dev/null | apt-key add -
 echo 'deb http://debmon.org/debmon debmon-jessie main' >/etc/apt/sources.list.d/debmon.list
 apt-get update -yqq
-apt-get get install -yqq icinga2 curl wget unzip vim rsync git
+apt-get get install -yqq icinga2 curl wget unzip vim rsync git apt-transport-https
 
 # roustabout
 curl https://raw.githubusercontent.com/joshuacox/roustabout/master/bootstraproustabout.sh|bash
