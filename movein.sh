@@ -15,3 +15,6 @@ apt-get get install -yqq icinga2 curl wget unzip vim rsync git
 # roustabout
 curl https://raw.githubusercontent.com/joshuacox/roustabout/master/bootstraproustabout.sh|bash
 curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/addus.sh | bash
+
+# Install docker
+/usr/local/bin/DebianInstall
