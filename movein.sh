@@ -2,7 +2,8 @@
 # move in to cloudatcost
 echo warthog.monitaur.net >/etc/hostname
 apt-get update -yqq
-apt-get get install -yqq apt-transport-https
+apt-get get install -yqq apt-transport-https netselect-apt
+netselect-apt -ns -t 25 -o /etc/apt/sources.list jessie
 cd /tmp
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/warthog/sshd_config
 mv sshd_config /etc/ssh/
@@ -10,7 +11,7 @@ mv sshd_config /etc/ssh/
 wget -O - http://debmon.org/debmon/repo.key 2>/dev/null | apt-key add -
 echo 'deb http://debmon.org/debmon debmon-jessie main' >/etc/apt/sources.list.d/debmon.list
 apt-get update -yqq
-apt-get install -yqq icinga2 curl wget unzip vim rsync git byobu fail2ban bzip2
+apt-get install -yqq icinga2 curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential
 
 # roustabout
 curl https://raw.githubusercontent.com/joshuacox/roustabout/master/bootstraproustabout.sh|bash
