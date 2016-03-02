@@ -1,10 +1,10 @@
 #!/bin/bash
 # move in to cloudatcost
-echo gecko.monitaur.net >/etc/hostname
+echo trusty.monitaur.net >/etc/hostname
 apt-get update -yqq
 apt-get get install -yqq apt-transport-https
 cd /tmp
-wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/gecko/sshd_config
+wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/trusty/sshd_config
 mv sshd_config /etc/ssh/
 # icinga ppa
 add-apt-repository ppa:formorer/icinga
