@@ -9,7 +9,7 @@ mv sshd_config /etc/ssh/
 # icinga ppa
 add-apt-repository ppa:formorer/icinga
 apt-get update -yqq
-apt-get install -yqq icinga2 curl wget unzip vim rsync git byobu fail2ban bzip2
+apt-get install -yqq icinga2 curl wget unzip vim rsync git byobu fail2ban bzip2 git build-essential
 
 # roustabout
 curl https://raw.githubusercontent.com/joshuacox/roustabout/master/bootstraproustabout.sh|bash
