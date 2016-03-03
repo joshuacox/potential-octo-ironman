@@ -3,10 +3,10 @@
 # this should be branch name
 MY_NAME=jessie
 echo $MY_NAME.monitaur.net >/etc/hostname
-hostname=$MY_NAME
+hostname $MY_NAME
 apt-get update -yqq
 apt-get get install -yqq apt-transport-https netselect-apt
-netselect-apt -ns -t 25 -o /etc/apt/sources.list $MY_NAME
+netselect-apt -ns -t 25 -o /etc/apt/sources.list jessie
 cd /tmp
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
 mv sshd_config /etc/ssh/
