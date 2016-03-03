@@ -5,7 +5,7 @@ MY_NAME=jessie
 echo $MY_NAME.monitaur.net >/etc/hostname
 hostname $MY_NAME
 apt-get update -yqq
-apt-get get install -yqq apt-transport-https netselect-apt
+apt-get install -yqq apt-transport-https netselect-apt
 netselect-apt -ns -t 25 -o /etc/apt/sources.list jessie
 cd /tmp
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
