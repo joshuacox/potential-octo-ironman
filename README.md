@@ -1,9 +1,9 @@
 potential-octo-ironman
 ======================
 
-Some simple things to setup octo on oltorf
+Some simple things to setup zotac on oltorf
 
-curl https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/zaphod/movein.sh | bash
+curl https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/zotac/movein.sh | bash
 
 use at your own risk
 
