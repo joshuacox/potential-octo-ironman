@@ -7,3 +7,7 @@ curl https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/zotac/mo
 
 use at your own risk
 
+<<<<<<< HEAD
+=======
+curl https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/ipa2/movein.sh | bash
+>>>>>>> ipa2
