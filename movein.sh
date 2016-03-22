@@ -1,8 +1,8 @@
 #!/bin/bash
 # move in to oltorf
-export BRANCH=yellow.freeipa
+export BRANCH=orange.freeipa
 export DOMAIN=monitaur.net
-export IP_ADDRESS=167.88.43.75
+export IP_ADDRESS=162.244.29.220
 hostname $BRANCH.$DOMAIN
 echo $BRANCH.$DOMAIN >/etc/hostname
 echo "domain $DOMAIN">/etc/resolv.conf
@@ -15,8 +15,8 @@ echo "#$BRANCH">>/etc/hosts
 echo "$IP_ADDRESS $BRANCH.$HOSTNAME">>/etc/hosts
 cp /etc/resolv.conf /etc/resolvconf/resolv.conf.d/base
 cd /tmp
-wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/sshd_config > /dev/null 2>&1
-mv sshd_config /etc/ssh/
+#wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/sshd_config > /dev/null 2>&1
+#mv sshd_config /etc/ssh/
 echo -e  'y\n'|ssh-keygen -q -t ecdsa -N "" -f ~/.ssh/id_ecdsa > /dev/null 2>&1
 curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/addus.sh | bash > /dev/null 2>&1
 
