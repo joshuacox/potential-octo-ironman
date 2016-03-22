@@ -1,8 +1,8 @@
 #!/bin/bash
 # move in to oltorf
-export BRANCH=centos7
+export BRANCH=yellow.freeipa
 export DOMAIN=monitaur.net
-export IP_ADDRESS=10.0.23.52
+export IP_ADDRESS=167.88.43.75
 hostname $BRANCH.$DOMAIN
 echo $BRANCH.$DOMAIN >/etc/hostname
 echo "domain $DOMAIN">/etc/resolv.conf
