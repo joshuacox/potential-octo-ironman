@@ -9,6 +9,8 @@ echo "domain $DOMAIN">/etc/resolv.conf
 echo "search $DOMAIN">>/etc/resolv.conf
 echo 'nameserver 8.8.8.8' >>/etc/resolv.conf
 echo 'nameserver 8.8.4.4' >>/etc/resolv.conf
+echo 'DNS1=8.8.8.8' >>/etc/sysconfig/network-scripts/ifcfg-eth0
+echo 'DNS2=8.8.4.4' >>/etc/sysconfig/network-scripts/ifcfg-eth0
 echo "#$BRANCH">>/etc/hosts
 echo "$IP_ADDRESS $BRANCH.$HOSTNAME">>/etc/hosts
 cp /etc/resolv.conf /etc/resolvconf/resolv.conf.d/base
