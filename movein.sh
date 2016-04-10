@@ -49,5 +49,5 @@ add_line_to_EXPORTS()
 
 check_if_line_exists || add_line_to_EXPORTS
 
-echo 'You should reboot $BRANCH now'
+echo "You should reboot $BRANCH now"
 cd /tmp
