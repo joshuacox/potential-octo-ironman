@@ -1,13 +1,5 @@
 #!/bin/bash
 # move in to oltorf
-<<<<<<< HEAD
-export HOST=buffalo
-export HOSTNAME=$BRANCH.webhosting.coop
-hostname $HOSTNAME
-echo $HOSTNAME >/etc/hostname
-echo 'domain webhosting.coop'>/etc/resolv.conf
-echo 'search webhosting.coop'>>/etc/resolv.conf
-=======
 export BRANCH=buffalo
 export DOMAIN=monitaur.net
 export IP_ADDRESS=45.62.227.31
@@ -15,7 +7,6 @@ hostname $BRANCH.$DOMAIN
 echo $BRANCH.$DOMAIN >/etc/hostname
 echo "domain $DOMAIN">/etc/resolv.conf
 echo "search $DOMAIN">>/etc/resolv.conf
->>>>>>> newbuffalo
 echo 'nameserver 8.8.8.8' >>/etc/resolv.conf
 echo 'nameserver 8.8.4.4' >>/etc/resolv.conf
 echo 'DNS1=8.8.8.8' >>/etc/sysconfig/network-scripts/ifcfg-eth0
@@ -24,14 +15,6 @@ echo "#$BRANCH">>/etc/hosts
 echo "$IP_ADDRESS $BRANCH.$HOSTNAME">>/etc/hosts
 cp /etc/resolv.conf /etc/resolvconf/resolv.conf.d/base
 cd /tmp
-<<<<<<< HEAD
-wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$HOST/interfaces
-mv interfaces /etc/network/
-wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$HOST/sshd_config
-mv sshd_config /etc/ssh/
-echo -e  'y\n'|ssh-keygen -q -t rsa -N "" -f ~/.ssh/id_rsa
-curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/addus.sh | bash
-=======
 #wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/sshd_config > /dev/null 2>&1
 #mv sshd_config /etc/ssh/
 echo -e  'y\n'|ssh-keygen -q -t ecdsa -N "" -f ~/.ssh/id_ecdsa > /dev/null 2>&1
@@ -85,4 +68,3 @@ add_line_to_EXPORTS()
 #check_if_line_exists || add_line_to_FSTAB
 
 echo "You should reboot $BRANCH.$DOMAIN now"
->>>>>>> newbuffalo
