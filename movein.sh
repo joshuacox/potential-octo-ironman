@@ -1,8 +1,8 @@
 #!/bin/bash
 # move in to oltorf
-export BRANCH=orange.freeipa
+export BRANCH=buffalo
 export DOMAIN=monitaur.net
-export IP_ADDRESS=162.244.29.220
+export IP_ADDRESS=45.62.227.31
 hostname $BRANCH.$DOMAIN
 echo $BRANCH.$DOMAIN >/etc/hostname
 echo "domain $DOMAIN">/etc/resolv.conf
