@@ -42,7 +42,7 @@ check_if_line_exists()
 
 add_line_to_EXPORTS()
 {
-    EXPORTS=/etc/fstab
+    EXPORTS=/etc/exports
     [ -w "$EXPORTS" ] || exports=/etc/exports
     printf "%s\n" "$LINE_TO_ADD" >> "$EXPORTS"
 }
