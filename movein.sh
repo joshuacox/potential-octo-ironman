@@ -27,8 +27,10 @@ chkconfig docker on
 
 # yum
 yum  -y update
-yum  -y install vim 
+yum  -y install vim  git
 
+# Roustabout
+curl https://raw.githubusercontent.com/joshuacox/roustabout/master/bootstraproustabout.sh|bash
 
 # Install Packer
 #cd /usr/local
