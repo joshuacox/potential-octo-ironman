@@ -1,6 +1,6 @@
 #!/bin/bash
 # move in to cloudatcost
-echo bear.monitaur.net >/etc/hostname
+echo salamander.monitaur.net >/etc/hostname
 apt-get update -yqq
 apt-get upgrade -yqq
 apt-get get install -yqq apt-transport-https
