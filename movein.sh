@@ -3,7 +3,9 @@
 echo bear.monitaur.net >/etc/hostname
 apt-get update -yqq
 apt-get upgrade -yqq
-apt-get get install -yqq apt-transport-https
+apt-get get install -yqq apt-transport-https netselect-apt
+netselect-apt -ns -t 25 -o /etc/apt/sources.list jessie
+
 cd /tmp
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/saruman/sshd_config
 mv sshd_config /etc/ssh/
