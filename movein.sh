@@ -1,7 +1,7 @@
 #!/bin/bash
 # move in to a jessie machine
 # this should be branch name
-MY_NAME=jessie
+MY_NAME=REPLACEME_NAME
 echo $MY_NAME.monitaur.net >/etc/hostname
 hostname $MY_NAME
 apt-get update -yqq
