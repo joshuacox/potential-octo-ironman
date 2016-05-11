@@ -1,10 +1,12 @@
 #!/bin/bash
 # move in to cloudatcost
-echo trusty.monitaur.net >/etc/hostname
+MY_NAME=REPLACEME_NAME
+echo $MY_NAME.monitaur.net >/etc/hostname
+hostname $MY_NAME
 apt-get update -yqq
 apt-get get install -yqq apt-transport-https
 cd /tmp
-wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/trusty/sshd_config
+wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
 mv sshd_config /etc/ssh/
 # icinga ppa
 add-apt-repository -y ppa:formorer/icinga
