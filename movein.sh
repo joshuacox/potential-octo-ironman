@@ -22,3 +22,8 @@ curl https://raw.githubusercontent.com/joshuacox/roustabout/master/bootstraprous
 bash /usr/local/bin/DebianDockerInstall
 # Key me
 curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/addus.sh | bash
+
+mkdir /root/git
+cd /root/git
+git clone https://github.com/joshuacox/mktunnel.git
+git clone https://github.com/joshuacox/mknginx.git
