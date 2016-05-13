@@ -5,15 +5,15 @@ export DOMAIN=webhosting.coop
 export IP_ADDRESS=104.233.118.233
 hostname $BRANCH.$DOMAIN
 echo $BRANCH.$DOMAIN >/etc/hostname
-echo "domain $DOMAIN">/etc/resolv.conf
-echo "search $DOMAIN">>/etc/resolv.conf
+#echo "domain $DOMAIN">/etc/resolv.conf
+#echo "search $DOMAIN">>/etc/resolv.conf
 echo 'nameserver 8.8.8.8' >>/etc/resolv.conf
 echo 'nameserver 8.8.4.4' >>/etc/resolv.conf
 echo 'DNS1=8.8.8.8' >>/etc/sysconfig/network-scripts/ifcfg-eth0
 echo 'DNS2=8.8.4.4' >>/etc/sysconfig/network-scripts/ifcfg-eth0
 echo "#$BRANCH">>/etc/hosts
 echo "$IP_ADDRESS $BRANCH.$HOSTNAME">>/etc/hosts
-cp /etc/resolv.conf /etc/resolvconf/resolv.conf.d/base
+#cp /etc/resolv.conf /etc/resolvconf/resolv.conf.d/base
 cd /tmp
 #wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$BRANCH/sshd_config > /dev/null 2>&1
 #mv sshd_config /etc/ssh/
