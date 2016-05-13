@@ -1,8 +1,8 @@
 #!/bin/bash
 # move in to oltorf
-export BRANCH=REPLACEME_NAME
-export DOMAIN=REPLACEME_DOMAIN
-export IP_ADDRESS=REPLACEME_IPADDRESS
+export BRANCH=tulip
+export DOMAIN=webhosting.coop
+export IP_ADDRESS=45.62.232.199
 hostname $BRANCH.$DOMAIN
 echo $BRANCH.$DOMAIN >/etc/hostname
 echo "domain $DOMAIN">/etc/resolv.conf
