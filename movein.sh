@@ -30,41 +30,4 @@ yum  -y update
 yum  -y install vim 
 
 
-# Install Packer
-#cd /usr/local
-#wget -c https://releases.hashicorp.com/packer/0.10.0/packer_0.10.0_linux_amd64.zip
-#cd bin
-#unzip /usr/local/packer_0.10.0_linux_amd64.zip
-
-#mkdir -p /$BRANCH/exports
-
-# clients look like this
-#LINE_TO_ADD="10.0.23.52:/$BRANCH/exports /$BRANCH/exports nfs rw,vers=4,addr=10.0.23.52,clientaddr=10.0.23.0/24 0 0"
-#LINE_TO_ADD="/$BRANCH/exports 10.0.23.0/24(rw)"
-
-#mkdir /$BRANCH/exports
-
-check_if_line_exists()
-{
-    # grep wont care if one or both files dont exist.
-    grep -qsFx "$LINE_TO_ADD" /etc/exports
-}
-
-add_line_to_EXPORTS()
-{
-    EXPORTS=/etc/fstab
-    [ -w "$EXPORTS" ] || exports=/etc/exports
-    printf "%s\n" "$LINE_TO_ADD" >> "$EXPORTS"
-}
-
-#cd /tmp
-#LINE_TO_ADD="65.67.51.187:/mktulu/exports /exports nfs rw,vers=4,addr=65.67.51.187,clientaddr=65.67.51.188 0 0"
-#check_if_line_exists || add_line_to_FSTAB
-
-#LINE_TO_ADD="/dev/vdb1 /var/lib/docker btrfs rw 0 0"
-#check_if_line_exists || add_line_to_FSTAB
-
-#LINE_TO_ADD="/dev/vdc1 /exports btrfs rw 0 0"
-#check_if_line_exists || add_line_to_FSTAB
-
 echo "You should reboot $BRANCH.$DOMAIN now"
