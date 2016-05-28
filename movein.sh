@@ -11,6 +11,7 @@ mv sshd_config /etc/ssh/
 # icinga ppa
 add-apt-repository -y ppa:formorer/icinga
 apt-get update -yqq
+apt-get upgrade -yqq
 apt-get install -yqq curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential
 apt-get install -yqq icinga2
 
