@@ -5,6 +5,8 @@ echo $MY_NAME.monitaur.net >/etc/hostname
 hostname $MY_NAME
 apt-get update -yqq
 apt-get get install -yqq apt-transport-https
+# new kernel
+apt-get install -yqq linux-generic-lts-vivid
 cd /tmp
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
 mv sshd_config /etc/ssh/
