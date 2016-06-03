@@ -23,3 +23,7 @@ curl https://raw.githubusercontent.com/joshuacox/roustabout/master/bootstraprous
 bash /usr/local/bin/UbuntuDockerInstall
 # Key me
 curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/addus.sh | bash
+service docker stop
+rm -Rf /var/lib/docker/*
+echo 'DOCKER_OPTS="-s overlay"' >> /etc/default/docker
+echo 'you need to reboot now to accept the new kernel'
