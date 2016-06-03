@@ -1,6 +1,6 @@
 #!/bin/bash
 # move in to cloudatcost
-MY_NAME=REPLACEME_NAME
+MY_NAME=connect
 echo $MY_NAME.monitaur.net >/etc/hostname
 hostname $MY_NAME
 apt-get update -yqq
