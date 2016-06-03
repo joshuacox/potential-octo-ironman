@@ -1,7 +1,7 @@
 #!/bin/bash
 # move in to cloudatcost
 MY_NAME=projects
-echo $MY_NAME.monitaur.net >/etc/hostname
+echo $MY_NAME.bokbot.com >/etc/hostname
 hostname $MY_NAME
 apt-get update -yqq
 apt-get get install -yqq apt-transport-https
