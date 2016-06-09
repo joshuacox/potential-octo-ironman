@@ -4,7 +4,7 @@ MY_NAME=gluster32
 echo $MY_NAME.monitaur.net >/etc/hostname
 hostname $MY_NAME
 apt-get update -yqq
-apt-get get install -yqq apt-transport-https
+apt-get install -yqq apt-transport-https
 # new kernel
 apt-get install -yqq linux-image-generic-lts-vivid linux-headers-generic-lts-vivid
 cd /tmp
