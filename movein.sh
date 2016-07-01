@@ -5,9 +5,9 @@ echo $MY_NAME.monitaur.net >/etc/hostname
 hostname $MY_NAME
 apt-get update -yq
 apt-get install -yq apt-transport-https
-apt-get upgrade -yq
+yes Y |apt-get upgrade -yq
 # new kernel
-apt-get install -yq linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
+yes Y|apt-get install -yq linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
 curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential
 cd /tmp
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
@@ -21,7 +21,7 @@ mv sshd_config /etc/ssh/
 # roustabout
 curl https://raw.githubusercontent.com/joshuacox/roustabout/master/bootstraproustabout.sh|bash
 # Install docker
-bash /usr/local/bin/UbuntuDockerInstall
+bash yes Y|/usr/local/bin/UbuntuDockerInstall
 # Key me
 curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/addus.sh | bash
 service docker stop
