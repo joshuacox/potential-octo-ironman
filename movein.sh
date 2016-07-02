@@ -7,6 +7,9 @@ hostname $MY_NAME
 apt-get update -yq
 apt-get install -yq apt-transport-https
 apt-get upgrade -yq
+apt-get dist-upgrade -yq
+apt-get upgrade -yq
+apt-get dist-upgrade -yq
 # new kernel
 apt-get install -yq linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
 curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential
