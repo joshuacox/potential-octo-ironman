@@ -4,7 +4,7 @@ MY_NAME=trusty-cloudatcost-base
 echo $MY_NAME.monitaur.net >/etc/hostname
 hostname $MY_NAME
 apt-get update -yq
-apt-get install -yq apt-transport-https
+apt-get install -yq apt-transport-https yes
 yes Y |apt-get upgrade -yq
 # new kernel
 yes Y|apt-get install -yq linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
