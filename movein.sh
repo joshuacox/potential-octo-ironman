@@ -4,23 +4,23 @@ DEBIAN_FRONTEND=noninteractive
 MY_NAME=trusty-cloudatcost-base
 echo $MY_NAME.monitaur.net >/etc/hostname
 hostname $MY_NAME
-apt-get update -yq
-apt-get install -yq apt-transport-https
-apt-get upgrade -yq
-apt-get dist-upgrade -yq
-apt-get upgrade -yq
-apt-get dist-upgrade -yq
+apt-get update -y
+apt-get install -y apt-transport-https
+apt-get upgrade -y
+apt-get dist-upgrade -y
+apt-get upgrade -y
+apt-get dist-upgrade -y
 # new kernel
-apt-get install -yq linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
+apt-get install -y linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
 curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential
 cd /tmp
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
 mv sshd_config /etc/ssh/
 # icinga ppa
 #add-apt-repository -y ppa:formorer/icinga
-#apt-get update -yq
-#apt-get upgrade -yq
-#apt-get install -yq icinga2
+#apt-get update -y
+#apt-get upgrade -y
+#apt-get install -y icinga2
 
 # roustabout
 curl https://raw.githubusercontent.com/joshuacox/roustabout/master/bootstraproustabout.sh|bash
