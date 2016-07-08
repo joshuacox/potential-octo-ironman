@@ -1,6 +1,6 @@
 #!/bin/bash
 # move in to cloudatcost
-DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND=noninteractive
 MY_NAME=trusty-cloudatcost-base
 apt-get update -y ; \
 apt-get install -y apt-transport-https ; \
