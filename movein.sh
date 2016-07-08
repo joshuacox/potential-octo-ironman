@@ -4,28 +4,28 @@ DEBIAN_FRONTEND=noninteractive
 MY_NAME=trusty-cloudatcost-base
 echo $MY_NAME.monitaur.net >/etc/hostname
 hostname $MY_NAME
-apt-get update -y ; \
-apt-get install -y apt-transport-https ; \
-apt-get upgrade -y ; \
-apt-get dist-upgrade -y ; \
+apt-get update -yqq ; \
+apt-get install -yqq apt-transport-https ; \
+apt-get upgrade -yqq ; \
+apt-get dist-upgrade -yqq ; \
 echo 0
-apt-get install -y linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
+apt-get install -yqq linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
 curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential
-apt-get update -y ; \
-apt-get install -y apt-transport-https ; \
-apt-get upgrade -y ; \
-apt-get dist-upgrade -y ; \
+apt-get update -yqq ; \
+apt-get install -yqq apt-transport-https ; \
+apt-get upgrade -yqq ; \
+apt-get dist-upgrade -yqq ; \
 echo 0
-apt-get install -y linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
+apt-get install -yqq linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
 curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential
 cd /tmp
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
 mv sshd_config /etc/ssh/
 # icinga ppa
-#add-apt-repository -y ppa:formorer/icinga
-#apt-get update -y
-#apt-get upgrade -y
-#apt-get install -y icinga2
+#add-apt-repository -yqq ppa:formorer/icinga
+#apt-get update -yqq
+#apt-get upgrade -yqq
+#apt-get install -yqq icinga2
 
 # roustabout
 curl https://raw.githubusercontent.com/joshuacox/roustabout/master/bootstraproustabout.sh|bash
