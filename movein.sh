@@ -4,13 +4,18 @@ DEBIAN_FRONTEND=noninteractive
 MY_NAME=trusty-cloudatcost-base
 echo $MY_NAME.monitaur.net >/etc/hostname
 hostname $MY_NAME
-apt-get update -y
-apt-get install -y apt-transport-https
-apt-get upgrade -y
-apt-get dist-upgrade -y
-apt-get upgrade -y
-apt-get dist-upgrade -y
-# new kernel
+apt-get update -y ; \
+apt-get install -y apt-transport-https ; \
+apt-get upgrade -y ; \
+apt-get dist-upgrade -y ; \
+echo 0
+apt-get install -y linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
+curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential
+apt-get update -y ; \
+apt-get install -y apt-transport-https ; \
+apt-get upgrade -y ; \
+apt-get dist-upgrade -y ; \
+echo 0
 apt-get install -y linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
 curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential
 cd /tmp
