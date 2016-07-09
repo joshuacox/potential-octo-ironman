@@ -8,12 +8,14 @@ wget -c https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_N
 update () {
   bash /tmp/update.sh
 }
-if [ ! -f /boot/vmlinuz-3.19.0-32-generic ]
+COUNTZERO=0
+while [ $COUNTZERO -lt 4  ]
+do
+  if [ ! -f /boot/vmlinuz-3.19.0-64-generic ]
     then update
-fi
-if [ ! -f /boot/vmlinuz-3.19.0-32-generic ]
-    then update
-fi
+  fi
+  COUNTZERO=$[$COUNTZERO+1]
+done
 
 cd /tmp
 wget -c https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
