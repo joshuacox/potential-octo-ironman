@@ -2,13 +2,20 @@
 # move in to cloudatcost
 DEBIAN_FRONTEND=noninteractive
 MY_NAME=trusty-cloudatcost-base
-apt-get update -yqq &>/dev/null ; \
-apt-get install -yqq apt-transport-https &>/dev/null ; \
-apt-get upgrade -yqq &>/dev/null ; \
-apt-get dist-upgrade -yqq &>/dev/null ; \
-echo 0
-apt-get install -yqq linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
-curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential &>/dev/null
+
+cd /tmp
+wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/update.sh
+update () {
+  bash /tmp/update.sh
+fi
+}
+if [ ! -f /boot/vmlinuz-3.19.0-32-generic ]
+    then update
+fi
+if [ ! -f /boot/vmlinuz-3.19.0-32-generic ]
+    then update
+fi
+
 cd /tmp
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
 mv sshd_config /etc/ssh/
