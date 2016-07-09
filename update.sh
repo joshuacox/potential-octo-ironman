@@ -1,6 +1,6 @@
 #!/bin/bash
 # update at cloudatcost
-DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND=noninteractive
 APT=apt-get  -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confnew -yqq
 $APT update
 $APT install apt-transport-https
