@@ -1,23 +1,13 @@
 #!/bin/bash
 # move in to cloudatcost
 DEBIAN_FRONTEND=noninteractive
-MY_NAME=trusty-cloudatcost-base
-echo $MY_NAME.monitaur.net >/etc/hostname
-hostname $MY_NAME
-apt-get update -y ; \
-apt-get install -y apt-transport-https ; \
-apt-get upgrade -y ; \
-apt-get dist-upgrade -y ; \
+apt-get update -y &>/dev/null ; \
+apt-get install -y apt-transport-https &>/dev/null ; \
+apt-get upgrade -y &>/dev/null ; \
+apt-get dist-upgrade -y &>/dev/null ; \
 echo 0
 apt-get install -y linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
-curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential
-apt-get update -y ; \
-apt-get install -y apt-transport-https ; \
-apt-get upgrade -y ; \
-apt-get dist-upgrade -y ; \
-echo 0
-apt-get install -y linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
-curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential
+curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential &>/dev/null
 cd /tmp
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
 mv sshd_config /etc/ssh/
