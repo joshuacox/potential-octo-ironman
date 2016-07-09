@@ -4,7 +4,7 @@ DEBIAN_FRONTEND=noninteractive
 MY_NAME=trusty-cloudatcost-base
 
 cd /tmp
-wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/update.sh
+wget -c https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/update.sh
 update () {
   bash /tmp/update.sh
 }
@@ -16,7 +16,7 @@ if [ ! -f /boot/vmlinuz-3.19.0-32-generic ]
 fi
 
 cd /tmp
-wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
+wget -c https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
 mv sshd_config /etc/ssh/
 # icinga ppa
 #add-apt-repository -yqq ppa:formorer/icinga
