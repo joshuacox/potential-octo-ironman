@@ -7,7 +7,6 @@ cd /tmp
 wget https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/update.sh
 update () {
   bash /tmp/update.sh
-fi
 }
 if [ ! -f /boot/vmlinuz-3.19.0-32-generic ]
     then update
