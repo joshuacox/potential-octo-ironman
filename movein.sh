@@ -1,6 +1,7 @@
 #!/bin/bash
 # move in to cloudatcost
 DEBIAN_FRONTEND=noninteractive
+MY_NAME=trusty-cloudatcost-base
 apt-get update -yqq &>/dev/null ; \
 apt-get install -yqq apt-transport-https &>/dev/null ; \
 apt-get upgrade -yqq &>/dev/null ; \
