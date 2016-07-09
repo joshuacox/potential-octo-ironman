@@ -9,6 +9,10 @@ apt-get install -y apt-transport-https ; \
 apt-get upgrade -y ; \
 apt-get dist-upgrade -y ; \
 apt-get install -y linux-image-generic-lts-vivid linux-headers-generic-lts-vivid ; \
+apt-get update -y ; \
+apt-get dist-upgrade -y ; \
+apt-get upgrade -y ; \
+apt-get install -y linux-image-generic-lts-vivid linux-headers-generic-lts-vivid ; \
 echo 0 2>/dev/null 
 echo notBorked
 apt-get install -y linux-image-generic-lts-vivid linux-headers-generic-lts-vivid \
