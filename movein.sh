@@ -1,8 +1,8 @@
 #!/bin/bash
 # move in to oltorf
-#export BRANCH=orange.freeipa
-#export DOMAIN=monitaur.net
-#hostname $BRANCH.$DOMAIN
+export BRANCH=orange.freeipa
+export DOMAIN=monitaur.net
+hostname $BRANCH.$DOMAIN
 #echo $BRANCH.$DOMAIN >/etc/hostname
 #echo "domain $DOMAIN">/etc/resolv.conf
 #echo "search $DOMAIN">>/etc/resolv.conf
@@ -19,15 +19,16 @@ cd /tmp
 echo -e  'y\n'|ssh-keygen -q -t ecdsa -N "" -f ~/.ssh/id_ecdsa > /dev/null 2>&1
 curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/addus.sh | bash > /dev/null 2>&1
 
+
+# yum
+yum  -y update
+yum  -y install epel-release
+yum  -y install vim  fail2ban
+
 # Docker
 curl -fsSL https://get.docker.com/ | sh
 service docker start
 chkconfig docker on
-
-# yum
-yum  -y update
-yum  -y install vim 
-
 
 # Install Packer
 #cd /usr/local
@@ -66,4 +67,4 @@ add_line_to_EXPORTS()
 #LINE_TO_ADD="/dev/vdc1 /exports btrfs rw 0 0"
 #check_if_line_exists || add_line_to_FSTAB
 
-echo "You should reboot $BRANCH.$DOMAIN now"
+#echo "You should reboot $BRANCH.$DOMAIN now"
