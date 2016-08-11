@@ -23,7 +23,7 @@ curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/addus.sh |
 # yum
 yum  -y update
 yum  -y install epel-release
-yum  -y install vim  fail2ban
+yum  -y install vim  fail2ban git
 
 # Docker
 curl -fsSL https://get.docker.com/ | sh
