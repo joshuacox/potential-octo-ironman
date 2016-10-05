@@ -39,7 +39,7 @@ git clone https://github.com/oblique/create_ap
 cd create_ap
 make install
 
-cat >> /etc/create_ap.conf << EOF
+cat > /etc/create_ap.conf << EOF
 CHANNEL=default
 GATEWAY=10.0.56.1
 WPA_VERSION=2
