@@ -1,7 +1,7 @@
 #!/bin/bash
 # move in to a jessie machine
 # this should be branch name
-TMP=mktemp -d --suffix=MOVETMP
+TMP=$(mktemp -d --suffix=MOVETMP)
 MY_NAME=monitaurpi
 echo $MY_NAME.monitaur.net >/etc/hostname
 hostname $MY_NAME
@@ -54,7 +54,7 @@ PASSPHRASE=REPLACEME_PASSPHRASE
 USE_PSK=0
 EOF
 
-REPLACEME_PASSPHRASE=tr -cd '[:alnum:]' < /dev/urandom | fold -w8 | head -n1
+REPLACEME_PASSPHRASE=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w8 | head -n1)
 sed -i "s/REPLACEME_PASSPHRASE/$REPLACEME_PASSPHRASE/" /etc/create_ap.conf
 
 wget https://raw.githubusercontent.com/adafruit/FONA_PPP/master/fona -O /etc/ppp/peers/ting
@@ -87,7 +87,12 @@ make grab
 make run
 
 cat >> /root/restart.sh << EOFRESTART
+cd /root/git/local-nginx
+make prod
+cd /root/git/mkdomoticz
+make run
 EOFRESTART
+
 chmod +x /root/restart.sh
 
 line='@reboot /bin/bash /root/restart.sh'
