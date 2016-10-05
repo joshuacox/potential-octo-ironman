@@ -57,6 +57,8 @@ EOF
 REPLACEME_PASSPHRASE=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w8 | head -n1)
 sed -i "s/REPLACEME_PASSPHRASE/$REPLACEME_PASSPHRASE/" /etc/create_ap.conf
 
+systemctl enable create_ap
+
 wget https://raw.githubusercontent.com/adafruit/FONA_PPP/master/fona -O /etc/ppp/peers/ting
 sed -i 's/\*\*\*\*/wholesale/g' /etc/ppp/peers/ting
 sed -i 's!^#/dev/ttyAMA0!/dev/ttyS0!g' /etc/ppp/peers/ting
