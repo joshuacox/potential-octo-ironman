@@ -21,7 +21,7 @@ apt-get update -yqq
 apt-get install -yqq icinga2 curl wget unzip vim \
 rsync git byobu fail2ban bzip2 sudo build-essential \
 wvdial ppp elinks hostapd dnsmasq autossh time \
-python-dev python-pip
+python-dev python-pip dnsutils net-tools
 
 # beaver
 pip install beaver
