@@ -5,8 +5,10 @@ TMP=$(mktemp -d --suffix=MOVETMP)
 MY_NAME=monitaurpi
 echo $MY_NAME.monitaur.net >/etc/hostname
 hostname $MY_NAME
+sed -i "s!black-pearl!$MY_NAME!g" /boot/device-init.yaml
 apt-get update -yqq
 apt-get install -yqq apt-transport-https netselect-apt
+apt-get upgrade -yqq
 #netselect-apt -ns -t 25 -o /etc/apt/sources.list jessie
 #sed -i 's/centarra/gigenet/g' /etc/apt/sources.list
 cd $TMP
