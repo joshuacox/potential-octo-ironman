@@ -80,11 +80,13 @@ git clone https://github.com/joshuacox/mkTrojanHorse.git
 cd /root/git/local-debian
 make stretch
 cd /root/git/local-nginx
+git checkout stretch
 make temp
 sleep 10
 make grab
 make prod
 cd /root/git/mkdomoticz
+git checkout arm
 make init
 sleep 10
 make grab
