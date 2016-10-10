@@ -87,6 +87,7 @@ make grab
 make prod
 cd /root/git/mkdomoticz
 git checkout arm
+echo 8080 > PORT
 make init
 sleep 10
 make grab
