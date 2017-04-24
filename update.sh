@@ -8,4 +8,4 @@ ${APT_GET_CMD} install apt-transport-https
 ${APT_GET_CMD} upgrade
 ${APT_GET_CMD} dist-upgrade
 ${APT_GET_CMD} install curl wget unzip vim \
-  rsync git byobu fail2ban bzip2 build-essential
+  nfs-common rsync git byobu fail2ban bzip2 build-essential
