@@ -1,25 +1,18 @@
 #!/bin/bash
-# move in to cloudatcost
+# move in to xenial
 DEBIAN_FRONTEND=noninteractive
-MY_NAME=trusty-cloudatcost-base
+MY_NAME=xenial
+TMP=$(mktemp -d --suffix=updatetmp)
 
 cd /tmp
 wget -c https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/update.sh
 update () {
   bash /tmp/update.sh
 }
-COUNTZERO=0
-while [ $COUNTZERO -lt 4  ]
-do
-  if [ ! -f /boot/vmlinuz-3.19.0-64-generic ]
-    then update
-  fi
-  COUNTZERO=$[$COUNTZERO+1]
-done
 
 cd /tmp
-wget -c https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
-mv sshd_config /etc/ssh/
+#wget -c https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
+#mv sshd_config /etc/ssh/
 # icinga ppa
 #add-apt-repository -yqq ppa:formorer/icinga
 #apt-get update -yqq
@@ -28,11 +21,27 @@ mv sshd_config /etc/ssh/
 
 # roustabout
 curl https://raw.githubusercontent.com/joshuacox/roustabout/master/bootstraproustabout.sh|bash
+# sprunge
+curl -s https://raw.githubusercontent.com/joshuacox/sprunge/master/install.sh |bash
+
 # Install docker
-bash /usr/local/bin/UbuntuDockerInstall
+bash /usr/local/bin/XenialDockerInstall
 # Key me
-curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/addus.sh | bash
-service docker stop
+curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/myaddus.sh | bash
+systemctl docker stop
 rm -Rf /var/lib/docker/*
 echo 'DOCKER_OPTS="-s overlay"' >> /etc/default/docker
 echo 'you need to reboot now to accept the new kernel'
+rm -Rf ${TMP}
+
+useradd whc
+gpasswd -a whc docker
+# gits
+mkdir -p /home/whc/git
+cd /home/whc/git
+
+git clone https://github.com/joshuacox/docker-icinga2.git
+git clone https://github.com/joshuacox/mkmattermost.git
+git clone https://github.com/joshuacox/mkRedmine.git
+git clone https://github.com/joshuacox/docker-gitlab.git
+cd docker-gitlab;git checkout envfile

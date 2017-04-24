@@ -1,6 +1,6 @@
 potential-octo-ironman
 ======================
 
-Some simple things to setup trusty
+Some simple things to setup xenial
 
-curl https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/trusty-cloudatcost-base/movein.sh | bash
+curl https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/xenial/movein.sh | bash
