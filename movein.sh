@@ -45,3 +45,4 @@ git clone https://github.com/joshuacox/mkmattermost.git
 git clone https://github.com/joshuacox/mkRedmine.git
 git clone https://github.com/joshuacox/docker-gitlab.git
 cd docker-gitlab;git checkout envfile
+chown -Rf whc. /home/whc
