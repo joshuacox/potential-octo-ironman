@@ -1,7 +1,8 @@
 #!/bin/bash
 # update at cloudatcost
 export DEBIAN_FRONTEND=noninteractive
-APT_GET_CMD='apt-get -yqq -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confnew'
+#APT_GET_CMD='apt-get -yqq -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confnew'
+APT_GET_CMD='apt-get -yqq'
 
 ${APT_GET_CMD} update
 ${APT_GET_CMD} install apt-transport-https
