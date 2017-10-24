@@ -1,7 +1,7 @@
 #!/bin/bash
 # move in to cloudatcost
 DEBIAN_FRONTEND=noninteractive
-MY_NAME=trusty-cloudatcost-base
+MY_NAME=xenial-cloudatcost-base
 
 cd /tmp
 wget -c https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/update.sh
@@ -29,7 +29,7 @@ mv sshd_config /etc/ssh/
 # roustabout
 curl https://raw.githubusercontent.com/joshuacox/roustabout/master/bootstraproustabout.sh|bash
 # Install docker
-bash /usr/local/bin/UbuntuDockerInstall
+bash /usr/local/bin/XenialDockerInstall
 # Key me
 curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/addus.sh | bash
 service docker stop
