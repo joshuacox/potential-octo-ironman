@@ -1,7 +1,7 @@
 #!/bin/bash
-# move in to cloudatcost
+# move in to GCE
 DEBIAN_FRONTEND=noninteractive
-MY_NAME=xenial-cloudatcost-base
+MY_NAME=id.stawkyard.com
 
 cd /tmp
 wget -c https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/update.sh
@@ -26,13 +26,17 @@ mv sshd_config /etc/ssh/
 #apt-get upgrade -yqq
 #apt-get install -yqq icinga2
 
-# roustabout
-curl https://raw.githubusercontent.com/joshuacox/roustabout/master/bootstraproustabout.sh|bash
 # Install docker
-bash /usr/local/bin/XenialDockerInstall
+#   with roustabout
+curl https://raw.githubusercontent.com/joshuacox/roustabout/master/UbuntuDockerInstall|bash
 # Key me
 curl https://raw.githubusercontent.com/WebHostingCoopTeam/keys/master/addus.sh | bash
-service docker stop
-rm -Rf /var/lib/docker/*
+systemctl stop docker
 echo 'DOCKER_OPTS="-s overlay"' >> /etc/default/docker
+rm -Rf /var/lib/docker/*
+echo 'LABEL=docker-id1 /var/lib/docker ext4 rw,relatime,data=ordered 0 0' >> /etc/fstab
+echo 'LABEL=exports-id1 /exports ext4 rw,relatime,data=ordered 0 0' >> /etc/fstab
+mount /var/lib/docker
+mount /exports
+#systemctl start docker
 echo 'you need to reboot now to accept the new kernel'
