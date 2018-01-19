@@ -1,7 +1,12 @@
 #!/bin/bash
 # move in to GCE
 DEBIAN_FRONTEND=noninteractive
-MY_NAME=id.stawkyard.com
+MY_NAME=id-stawkyard-com-1
+MY_HOSTNAME=id.stawkyard.com
+
+echo $MY_HOSTNAME > /etc/hostname
+hostname $MY_HOSTNAME
+hostnamectl set-hostname $MY_HOSTNAME
 
 cd /tmp
 wget -c https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/update.sh
@@ -19,6 +24,7 @@ done
 
 cd /tmp
 wget -c https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
+https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/id-stawkyard-com-1/sshd_config
 mv sshd_config /etc/ssh/
 # icinga ppa
 #add-apt-repository -yqq ppa:formorer/icinga
