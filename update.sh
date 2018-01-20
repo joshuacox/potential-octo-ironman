@@ -7,4 +7,5 @@ apt-get -yqq -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confn
 apt-get -yqq -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confnew dist-upgrade
 apt-get -yqq -o Dpkg::Options::=--force-confdef -o Dpkg::Options::=--force-confnew \
   install linux-image-generic linux-headers-generic \
-  curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential
+  curl wget unzip vim rsync git byobu fail2ban bzip2 sudo build-essential \
+  htop sysstat iotop
