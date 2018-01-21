@@ -13,18 +13,11 @@ wget -c https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_N
 update () {
   bash /tmp/update.sh
 }
-COUNTZERO=0
-while [ $COUNTZERO -lt 4  ]
-do
-  if [ ! -f /boot/vmlinuz-3.19.0-64-generic ]
-    then update
-  fi
-  COUNTZERO=$[$COUNTZERO+1]
-done
+
+update
 
 cd /tmp
 wget -c https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/$MY_NAME/sshd_config
-https://raw.githubusercontent.com/joshuacox/potential-octo-ironman/id-thalhalla-com-1/sshd_config
 mv sshd_config /etc/ssh/
 # icinga ppa
 #add-apt-repository -yqq ppa:formorer/icinga
